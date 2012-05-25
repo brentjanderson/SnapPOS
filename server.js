@@ -2,7 +2,7 @@
 var connect = require('connect')
     , express = require('express')
     , io = require('socket.io')
-    , port = (process.env.PORT || 8081);
+    , port = (process.env.PORT || 8080);
 
 //Setup Express
 var server = express.createServer();
@@ -11,7 +11,7 @@ server.configure(function(){
     server.set('view options', { layout: false });
     server.use(connect.bodyParser());
     server.use(express.cookieParser());
-    server.use(express.session({ secret: "shhhhhhhhh!"}));
+    server.use(express.session({ secret: "00ba170b5e59a54aa71c95cbf5b03573"}));
     server.use(connect.static(__dirname + '/static'));
     server.use(server.router);
 });
@@ -35,7 +35,7 @@ server.error(function(err, req, res, next){
                 },status: 500 });
     }
 });
-server.listen( port);
+server.listen(port);
 
 //Setup Socket.IO
 var io = io.listen(server);
@@ -55,7 +55,16 @@ io.sockets.on('connection', function(socket){
 //              Routes                   //
 ///////////////////////////////////////////
 
-/////// ADD ALL YOUR ROUTES HERE  /////////
+server.get('/admin', function(req,res){
+    res.render('admin.jade', {
+        locals: {
+                title : 'SnapPOS Administrator',
+                description: '',
+                author: 'Brent Anderson',
+                analyticssiteid: ''
+                }
+    });
+});
 
 server.get('/', function(req,res){
   res.render('index.jade', {
@@ -63,7 +72,7 @@ server.get('/', function(req,res){
               title : 'Your Page Title'
              ,description: 'Your Page Description'
              ,author: 'Your Name'
-             ,analyticssiteid: 'XXXXXXX' 
+             ,analyticssiteid:  ''
             }
   });
 });
