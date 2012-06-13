@@ -2,7 +2,8 @@
 var connect = require('connect')
     , express = require('express')
     , io = require('socket.io')
-    , port = (process.env.PORT || 8080);
+    , port = (process.env.PORT || 8080)
+    , everyauth = require('everyauth');
 
 //Setup Express
 var server = express.createServer();
@@ -45,16 +46,31 @@ io.sockets.on('connection', function(socket){
     socket.broadcast.emit('server_message',data);
     socket.emit('server_message',data);
   });
+    
   socket.on('disconnect', function(){
     console.log('Client Disconnected.');
   });
+  
+  socket.on('refresh-tables',function() {
+    socket.emit('list-tables',fetchTables());
+  });
+  
+  socket.on('debug', function(d) {
+    console.log(d);
+  });
+  
+  // Initialization
+  socket.emit('list-tables',fetchTables());
 });
+
+function fetchTables() {
+    return [{name:'Table A'},{name:'Table B'}];
+}
 
 
 ///////////////////////////////////////////
 //              Routes                   //
 ///////////////////////////////////////////
-
 server.get('/admin', function(req,res){
     res.render('admin.jade', {
         locals: {
@@ -66,8 +82,34 @@ server.get('/admin', function(req,res){
     });
 });
 
+server.get('/tables', function(req,res){
+  res.render('tables.jade', {
+    locals : { 
+              title : 'Your Page Title'
+             ,description: 'Your Page Description'
+             ,author: 'Your Name'
+             ,analyticssiteid:  ''
+            }
+  });
+});
+
+server.get('/tickets', function(req,res){
+  res.render('tickets.jade', {
+    locals : { 
+              title : 'Your Page Title'
+             ,description: 'Your Page Description'
+             ,author: 'Your Name'
+             ,analyticssiteid:  ''
+            }
+  });
+});
+
 server.get('/', function(req,res){
-  res.render('index.jade', {
+  res.redirect('/tables');
+});
+
+server.get('/table', function(req,res){
+  res.render('table-detail.jade', {
     locals : { 
               title : 'Your Page Title'
              ,description: 'Your Page Description'
