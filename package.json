@@ -1,0 +1,9 @@
+{
+  "name": "SnapPOS",
+  "description": "The best web-based point of sale system ever. It's a Snap!",
+  "version": "0.1.0",
+  "author": "Brent Anderson",
+  "dependencies": {
+  },
+  "devDependencies": {}
+}
