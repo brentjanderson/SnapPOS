@@ -1,0 +1,50 @@
+<template name="waiter_header">
+    <div data-theme="a" data-role="header">
+        <h3>SnapPOS</h3>
+        <a id="add-table" data-role="button" data-transition="fade" href="#page1" data-icon="plus" data-iconpos="left">Button</a>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#p_tables" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
+                        Tables
+                    </a>
+                </li>
+                <li>
+                    <a href="#alerts" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
+                        Alerts
+                    </a>
+                </li>
+                <li>
+                    <a href="#info" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
+                        Info
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
+
+<template name="page_welcome">
+    <div data-role="page" id="p_welcome">
+        {{> waiter_header}}
+        <div data-role="content" style="padding: 15px;">
+            <h1>Welcome</h1>
+        </div>
+    </div>
+</template>
+
+<template name="page_tables">
+    <div data-role="page" id="p_tables">
+        {{> waiter_header}}
+        <div data-role="content" style="padding: 15px">
+            {{> partial_table_listview}}
+        </div>
+    </div>
+    {{>page_table}}
+</template>
+
+<template name="page_table">
+    <div data-role="page" id="p_table">
+        
+    </div>
+</template>

@@ -1,0 +1,10 @@
+<template name="partial_table_listview">
+    <ul class="table_listview" data-role="listview" data-divider-theme="b" data-inset="true">
+        <li data-role="list-divider" role="heading">Tables</li>
+        {{#each tables}}
+        <li>
+            <a href="/table/{{_id}}">{{name}}</a>
+        </li>
+        {{/each}}
+    </ul>
+</template>

@@ -7,57 +7,7 @@
     <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
 </head>
 
-<body>
-    <div data-role="page" id="page2">
-        <div data-theme="a" data-role="header">
-            <h3>SnapPOS</h3>
-            <a data-role="button" data-transition="fade" href="#page1" data-icon="plus" data-iconpos="left">Button</a>
-            <div data-role="navbar" data-iconpos="top">
-                    <ul>
-                        <li>
-                            <a href="#page2" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
-                                Button
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#page1" data-theme="" data-icon="">
-                                Button
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#page1" data-theme="" data-icon="">
-                                Button
-                            </a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-        {{> hello}}
-    </div>
-    <div data-role="page" id="page1">
-        <div data-theme="a" data-role="header">
-            <h3>SnapPOS</h3>
-            <a data-role="button" data-transition="fade" href="#page1" data-icon="plus" data-iconpos="left">Button</a>
-            <div data-role="navbar" data-iconpos="top">
-                    <ul>
-                        <li>
-                            <a href="#page2" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
-                                Button
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#page1" data-theme="" data-icon="">
-                                Button
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#page1" data-theme="" data-icon="">
-                                Button
-                            </a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-        <h1>hi</h1>
-    </div>
+<body>    
+    {{> page_welcome}}
+    {{> page_tables}}
 </body>
