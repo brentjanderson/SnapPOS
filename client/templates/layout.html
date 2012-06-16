@@ -4,10 +4,25 @@
     <title>SnapPOS</title>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.js"></script>
+<!--    
+Disabled: This switches off Jquery Mobile's routing system. Maybe I'll reuse it
+<script>
+        $.mobile.ajaxEnabled = false;
+        $.mobile.linkBindingEnabled = false;
+        $.mobile.hashListeningEnabled = false;
+        $.mobile.pushStateEnabled = false;
+
+        // Remove page from DOM when it's being replaced
+        $('div[data-role="page"]').live('pagehide', function (event, ui) {
+            $(event.currentTarget).remove();
+        });
+    </script>-->
 </head>
 
 <body>    
     {{> page_welcome}}
     {{> page_tables}}
+    {{> page_table}}
+    {{> page_alerts}}
 </body>

@@ -1,9 +1,29 @@
+<template name="waiter_header">
+    <div data-theme="a" data-role="header">
+        <h3>SnapPOS</h3>
+        <a id="add-table" data-role="button" data-transition="fade" href="#page1" data-icon="plus" data-iconpos="left">Button</a>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#p_tables" data-icon="">Tables</a>
+                </li>
+                <li>
+                    <a href="#p_alerts" data-icon="">Alerts</a>
+                </li>
+                <li>
+                    <a href="#p_info" data-icon="">Info</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
+
 <template name="partial_table_listview">
     <ul class="table_listview" data-role="listview" data-divider-theme="b" data-inset="true">
         <li data-role="list-divider" role="heading">Tables</li>
         {{#each tables}}
         <li>
-            <a href="/table/{{_id}}">{{name}}</a>
+            <a data-transition="flip" href="?id={{_id}}#p_table" rel="external">{{name}}</a> 
         </li>
         {{/each}}
     </ul>
