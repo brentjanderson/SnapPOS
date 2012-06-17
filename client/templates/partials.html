@@ -1,17 +1,17 @@
 <template name="waiter_header">
-    <div data-theme="a" data-role="header">
+    <div data-role="header">
         <h3>SnapPOS</h3>
         <a id="add-table" data-role="button" data-transition="fade" href="#page1" data-icon="plus" data-iconpos="left">Button</a>
         <div data-role="navbar" data-iconpos="top">
             <ul>
                 <li>
-                    <a href="#p_tables" data-icon="">Tables</a>
+                    <a href="#tables" data-icon="">Tables</a>
                 </li>
                 <li>
-                    <a href="#p_alerts" data-icon="">Alerts</a>
+                    <a href="#alerts" data-icon="">Alerts</a>
                 </li>
                 <li>
-                    <a href="#p_info" data-icon="">Info</a>
+                    <a href="#info" data-icon="">Info</a>
                 </li>
             </ul>
         </div>
@@ -23,7 +23,7 @@
         <li data-role="list-divider" role="heading">Tables</li>
         {{#each tables}}
         <li>
-            <a data-transition="flip" href="#p_table" rel="external">{{name}}</a> 
+            <a data-transition="flip" href="#table">{{name}}</a> 
         </li>
         {{/each}}
     </ul>

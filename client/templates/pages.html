@@ -1,43 +1,34 @@
 <template name="page_welcome">
-    <div data-role="page" id="p_welcome">
-        {{> waiter_header}}
-        <div data-role="content" style="padding: 15px;">
-            <h1>Welcome</h1>
-        </div>
+    {{> waiter_header}}
+    <div data-role="content" style="padding: 15px;">
+        <h1>Welcome</h1>
     </div>
 </template>
 
 <template name="page_tables">
-    <div data-role="page" id="p_tables">
-        {{> waiter_header}}
-        <div data-role="content" style="padding: 15px">
-            {{> partial_table_listview}}
-        </div>
+    {{> waiter_header}}
+    <div data-role="content" style="padding: 15px">
+        {{> partial_table_listview}}
     </div>
-    {{>page_table}}
 </template>
 
 <template name="page_table">
-    <div data-role="page" id="p_table">
-        {{> waiter_header}}
-        <div data-role="content" style="padding: 15px">
-            {{#if table}}
-                {{#with table}}
-                    <h1>Table: </h1>
-                {{/with}}
-            {{else}}
-                <h1>No table loaded</h1>
-            {{/if}}
-        </div>
+    {{> waiter_header}}
+    <div data-role="content" style="padding: 15px">
+        {{#if table}}
+            {{#with table}}
+                <h1>Table: </h1>
+            {{/with}}
+        {{else}}
+            <h1>No table loaded</h1>
+        {{/if}}
     </div>
 </template>
 
 <template name="page_alerts">
-    <div data-role="page" id="p_alerts">
-        {{> waiter_header}}
-        <div data-role="content" style="padding: 15px">
+    {{> waiter_header}}
+    <div data-role="content" style="padding: 15px">
 
-        </div>
     </div>
 </template>
 
