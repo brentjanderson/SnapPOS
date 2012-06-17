@@ -21,7 +21,13 @@
     <div data-role="page" id="p_table">
         {{> waiter_header}}
         <div data-role="content" style="padding: 15px">
-
+            {{#if table}}
+                {{#with table}}
+                    <h1>Table: </h1>
+                {{/with}}
+            {{else}}
+                <h1>No table loaded</h1>
+            {{/if}}
         </div>
     </div>
 </template>

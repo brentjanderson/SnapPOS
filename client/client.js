@@ -7,3 +7,6 @@ Template.waiter_header.events = {
     }
 };
 
+Template.page_table.table = function() {
+    return Tables.findOne();
+}
